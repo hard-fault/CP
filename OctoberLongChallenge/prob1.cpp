@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t,m,n,maxi,i;
+	int initial_m;
+	int temp[10000];
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m;
+        maxi=-1;
+        for(i=0;i<n;i++)
+        {
+            cin>>temp[i];
+            if(temp>maxi)maxi=temp;
+        }
+	initial_m=0;
+	for(i=0;i<n;i++)
+		initial_m+=(maxi-temp[i]);
+	if(m<initial_m)
+		cout<<"NO\n";
+	else if((m-initial_m)%n==0)
+		cout<<"YES\n";
+	else
+		cout<<"NO\n";
+   }
+}
